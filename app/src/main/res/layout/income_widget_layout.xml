@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#80FFFFFF"> <!-- Semi-transparent white background -->
+
+    <TextView
+        android:id="@+id/widgetTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income Plan Summary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/widgetTodayProgressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today: N/A"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/widgetWeekProgressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Week: N/A"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/widgetMonthProgressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Month: N/A"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/widgetLastUpdatedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last updated: N/A"
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
