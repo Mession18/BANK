@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/planActivityRootLayout"
+    tools:context=".PlanActivity">
+
+    <Button
+        android:id="@+id/prevMonthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/monthYearTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/prevMonthButton"
+        app:layout_constraintBottom_toBottomOf="@id/prevMonthButton"
+        app:layout_constraintStart_toEndOf="@id/prevMonthButton"
+        app:layout_constraintEnd_toStartOf="@id/nextMonthButton"
+        tools:text="June 2024" />
+
+    <Button
+        android:id="@+id/nextMonthButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&gt;"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/monthlyGoalSummaryTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Monthly Goals Summary: (Placeholder)"
+        android:padding="8dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/monthYearTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calendarRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/monthlyGoalSummaryTextView"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyGoalsRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:layout_constraintVertical_weight="1"/>
+
+    <TextView
+        android:id="@+id/calendarEmptyStateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calendar_empty_state"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/calendarRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@id/calendarRecyclerView"
+        app:layout_constraintStart_toStartOf="@id/calendarRecyclerView"
+        app:layout_constraintEnd_toEndOf="@id/calendarRecyclerView"
+        android:gravity="center"
+        android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weeklyGoalsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/calendarRecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:maxHeight="200dp"/> <!-- Optional: constrain height -->
+
+    <TextView
+        android:id="@+id/weeklyGoalsEmptyStateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weekly_goals_empty_state"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/weeklyGoalsRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@id/weeklyGoalsRecyclerView"
+        app:layout_constraintStart_toStartOf="@id/weeklyGoalsRecyclerView"
+        app:layout_constraintEnd_toEndOf="@id/weeklyGoalsRecyclerView"
+        android:gravity="center"
+        android:padding="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addIncomeFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Add Income" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

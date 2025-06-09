@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:gravity="center_horizontal"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:minHeight="60dp">
+
+    <TextView
+        android:id="@+id/dayOfMonthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="1"/>
+
+    <TextView
+        android:id="@+id/dailyIncomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        tools:text="$15/$20"
+        android:text=""/>
+
+</LinearLayout>
